@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kuberfirstservice-59cc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kuberfirstservice-59cc"
+  template:
+    metadata:
+      labels:
+        app: "kuberfirstservice-59cc"
+    spec:
+      containers:
+        - name: "kuberfirstservice-59cc"
+          image: "containerforkuber01.azurecr.io/kuberfirstservice"
+          ports:
+          - containerPort: 80
